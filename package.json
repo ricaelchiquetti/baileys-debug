@@ -1,0 +1,29 @@
+{
+  "name": "baileys-debug",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc.6",
+    "node-cache": "^5.1.2",
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.1",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "@types/qrcode-terminal": "^0.12.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
