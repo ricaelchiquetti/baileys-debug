@@ -3,8 +3,11 @@ import makeWASocket, { useMultiFileAuthState, DisconnectReason, downloadMediaMes
 import pino from 'pino';
 import { Boom } from '@hapi/boom';
 import * as qrcode from 'qrcode-terminal';
+import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+
+dotenv.config();
 
 const logger = pino({ level: 'silent' });
 
@@ -110,7 +113,11 @@ async function connectToWhatsApp() {
             console.log("De:", msg.key.remoteJid)
             
             try {
-                if (msg.key.remoteJid === '554799165941@s.whatsapp.net') {
+                const targetJid = process.env.TARGET_JID;
+                if (!targetJid) {
+                    console.warn('TARGET_JID não definido no .env; pulando envio automático.');
+                }
+                if (targetJid && msg.key.remoteJid === targetJid) {
                     await sock.sendMessage(msg.key.remoteJid!, { text: 'Hello World' })
                     console.log("✅ Mensagem enviada!")
                 }
