@@ -8,7 +8,7 @@ Projeto simples em TypeScript para testar/conectar no WhatsApp usando `@whiskeys
 
 ## Instalação
 ```bash
-cd "D:/laragon/www/baileys-debug"
+git clone
 npm install
 ```
 
